@@ -5,7 +5,7 @@ def load_level(filename):
     """
 
     try:
-        f = open("../%s" % filename, "r")
+        f = open("%s" % filename, "r")
         level_file = read_level(f)
         f.close()
         is_levelcorrect,plant_name,plant_width,\
@@ -13,8 +13,8 @@ def load_level(filename):
         if not is_levelcorrect:
             print("Ubable to load level file")
         return is_levelcorrect,plant_name,plant_width,plant_height,rover_cor,tiles
-    except FileNotFoundError:
-        print("Level file could not be found")
+    except :
+        print("\nLevel file could not be found")
 ##read file
 def read_level(file):
     level_file=list()
